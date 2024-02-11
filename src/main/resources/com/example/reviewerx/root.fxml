@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="670.0" prefWidth="990.0" style="-fx-background-color: D5EEEB;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.reviewerx.RootController">
+   <children>
+      <AnchorPane layoutX="-2.0" prefHeight="51.0" prefWidth="997.0" style="-fx-background-color: #1E265C;">
+         <children>
+            <Label layoutX="401.0" layoutY="11.0" prefHeight="30.0" prefWidth="156.0" text="File Reviewer" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Book Antiqua Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+     <!-- <ToggleButtonGroup layoutX="142.0" layoutY="110.0" selectionType="SINGLE" />  -->
+      <ButtonBar layoutX="70.0" layoutY="50.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="829.0" style="-fx-background-color: D5D6EE;">
+        <buttons>
+          <Button fx:id="btnDualTab" mnemonicParsing="false" onAction="#acbtnDualTab" text="Dual Table View" textAlignment="RIGHT" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Single Table View" />
+        </buttons>
+      </ButtonBar>
+      <VBox layoutX="14.0" layoutY="156.0" prefHeight="78.0" prefWidth="75.0">
+         <children>
+            <Button fx:id="btnConverted" mnemonicParsing="false" onAction="#acbtnConverted" prefHeight="19.0" prefWidth="75.0" text="Converted" />
+            <Button fx:id="btnEdited" mnemonicParsing="false" onAction="#acbtnEdited" prefHeight="19.0" prefWidth="75.0" text="Edited" />
+         </children>
+      </VBox>
+      <TextField fx:id="upConverted" layoutX="91.0" layoutY="156.0" prefHeight="27.0" prefWidth="274.0" promptText="Upload Converted file.htm">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="upEdited" layoutX="91.0" layoutY="182.0" prefHeight="25.0" prefWidth="274.0" promptText="Upload Edited file.htm">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <Text layoutX="27.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File Type:">
+         <font>
+            <Font name="Book Antiqua Bold" size="15.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="radFinal" layoutX="111.0" layoutY="107.0" mnemonicParsing="false" selected="true" text="Final" textFill="#2a85b2">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="bToggle" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radPPS" layoutX="173.0" layoutY="107.0" mnemonicParsing="false" text="PPS" textFill="#2a85b2" toggleGroup="$bToggle">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </RadioButton>
+      <TableView fx:id="tableView" layoutX="375.0" layoutY="91.0" onMouseClicked="#selectedCol" prefHeight="497.0" prefWidth="522.0">
+        <columns>
+          <TableColumn fx:id="colNo" prefWidth="95.0" text="No" />
+          <TableColumn fx:id="colConverted" prefWidth="208.0" text="Converted" />
+            <TableColumn fx:id="colEdited" prefWidth="218.0" text="Edited" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnViewinTable" layoutX="168.0" layoutY="225.0" mnemonicParsing="false" onAction="#acbtnViewinTable" text="View in Table" />
+      <HBox layoutX="377.0" layoutY="598.0" prefHeight="44.0" prefWidth="601.0">
+         <children>
+            <TextField fx:id="inputNo" editable="false" prefHeight="25.0" prefWidth="91.0" promptText="No">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="inputCon" editable="false" prefHeight="25.0" prefWidth="207.0" promptText="Converted">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="inputEdt" prefHeight="25.0" prefWidth="222.0" promptText="Edited">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSubmit" mnemonicParsing="false" onAction="#acbtnSubmit" prefHeight="25.0" prefWidth="78.0" text="Submit" />
+         </children>
+      </HBox>
+      <Button fx:id="btnCheck" layoutX="903.0" layoutY="310.0" mnemonicParsing="false" onAction="#acbtnCheck" prefHeight="25.0" prefWidth="68.0" text="Check" />
+      <Button cancelButton="true" layoutX="903.0" layoutY="53.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="62.0" text="CLOSE" textFill="#f70c0c">
+         <font>
+            <Font name="Cooper Black" size="12.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="proBar" layoutX="377.0" layoutY="82.0" prefHeight="18.0" prefWidth="522.0" progress="0.0" />
+      <AnchorPane layoutX="14.0" layoutY="296.0" prefHeight="302.0" prefWidth="336.0">
+         <children>
+            <Text fill="#1815ad" layoutX="129.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#124d13" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Words in Converted htm =" wrappingWidth="189.6943359375">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#e12d20" layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Words in Edited htm       =" wrappingWidth="189.6943359375">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblConvertedTotal" layoutX="222.0" layoutY="41.0" text="Label" textFill="#1c7850">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEditedTotal" layoutX="222.0" layoutY="71.0" text="Label" textFill="#da422a">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Text fill="#1815ad" layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Probable Page                 =" wrappingWidth="189.6943359375">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Text>
+            <Label fx:id="lbl" layoutX="222.0" layoutY="104.0" text="N/A" textFill="#1815ad">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
