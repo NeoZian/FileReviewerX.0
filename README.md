@@ -2,6 +2,9 @@
 
 Have you ever edited an HTML file, meticulously tweaked its design, but then dreaded the tedious task of ensuring the essential content remains unchanged? Worry no more, because FileReviewerX.0 is here to swoop in and save the day!
 
+![image](https://github.com/NeoZian/FileReviewerX.0/assets/26576892/19e798b3-28b3-4263-aa84-ed459f076a25)
+
+
 ## Why FileReviewerX.0?
 
 Imagine working on a massive HTML file with thousands of words. You've poured your heart into redesigning its look, but now you're faced with the daunting challenge of meticulously comparing it to the original file to guarantee that the core content hasn't accidentally shifted or vanished. That's where FileReviewerX.0 steps in as your trusty companion.
